@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Happy New Year 2026">
+    <meta property="og:description" content="Warm wishes from Lakmal Weerasinghe">
+    <meta property="og:type" content="website">
+
+    <title>Happy New Year 2026! 🎉</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            text-align: center;
+            z-index: 10;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                text-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+            }
+            50% {
+                text-shadow: 0 0 40px rgba(255, 255, 255, 1), 0 0 60px rgba(255, 215, 0, 0.8);
+            }
+        }
+
+        .year {
+            font-size: 6rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+            margin: 20px 0;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .names {
+            font-size: 2rem;
+            color: #fff;
+            margin: 30px 0;
+            animation: fadeIn 2s ease-in 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .name {
+            display: inline-block;
+            margin: 0 15px;
+            padding: 10px 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        .name:nth-child(1) {
+            animation-delay: 0s;
+        }
+        .name:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+        .name:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .wishes {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 30px;
+            animation: fadeIn 2s ease-in 1s both;
+        }
+
+        /* Fireworks */
+        .firework {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            animation: explode 2s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                opacity: 1;
+                transform: translate(0, 0) scale(1);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(var(--tx), var(--ty)) scale(0);
+            }
+        }
+
+        /* Confetti */
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: var(--color);
+            animation: fall linear infinite;
+            animation-duration: var(--duration);
+            animation-delay: var(--delay);
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Stars */
+        .star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 1.5s ease-in-out infinite;
+            animation-delay: var(--delay);
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0.3;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .year {
+                font-size: 4rem;
+            }
+            .names {
+                font-size: 1.5rem;
+            }
+            .name {
+                display: block;
+                margin: 10px auto;
+                width: fit-content;
+            }
+            .wishes {
+                font-size: 1.2rem;
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Happy New Year 🎉</h1>
+        <div class="year">2026</div>
+        <div class="names">
+            <div class="name">✨ Wishmi ✨</div>
+            <div class="name">✨ Chamodya ✨</div>
+            <div class="name">✨ Haseena ✨</div>
+        </div>
+        <div class="wishes">
+            May this year bring you joy, success,<br>
+            and endless happiness! 🎊
+        </div>
+    </div>
+
+    <script>
+        // Create fireworks
+        function createFirework() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#ffd93d', '#f9ca24', '#6c5ce7', '#fd79a8'];
+            const firework = document.createElement('div');
+            firework.className = 'firework';
+            firework.style.left = Math.random() * 100 + '%';
+            firework.style.top = Math.random() * 100 + '%';
+            firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            const tx = (Math.random() - 0.5) * 200;
+            const ty = (Math.random() - 0.5) * 200;
+            firework.style.setProperty('--tx', tx + 'px');
+            firework.style.setProperty('--ty', ty + 'px');
+            
+            document.body.appendChild(firework);
+            
+            setTimeout(() => firework.remove(), 2000);
+        }
+
+        // Create confetti
+        function createConfetti() {
+            const colors = ['#ff6b6b', '#4ecdc4', '#45b7d1', '#ffd93d', '#f9ca24', '#6c5ce7', '#fd79a8'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + '%';
+                confetti.style.top = -10 + 'px';
+                confetti.style.setProperty('--color', colors[Math.floor(Math.random() * colors.length)]);
+                confetti.style.setProperty('--duration', (Math.random() * 3 + 2) + 's');
+                confetti.style.setProperty('--delay', Math.random() * 2 + 's');
+                document.body.appendChild(confetti);
+            }
+        }
+
+        // Create stars
+        function createStars() {
+            for (let i = 0; i < 100; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 100 + '%';
+                star.style.setProperty('--delay', Math.random() * 2 + 's');
+                document.body.appendChild(star);
+            }
+        }
+
+        // Initialize
+        createStars();
+        createConfetti();
+        setInterval(createFirework, 200);
+    </script>
+</body>
+</html>
